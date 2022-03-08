@@ -8,6 +8,7 @@ import {
 import { useTheme } from "@material-ui/styles";
 import { withRouter } from "react-router-dom";
 import classNames from "classnames";
+import InfoIcon from '@material-ui/icons/Info';
 
 // styles
 import useStyles from "./styles";
@@ -29,6 +30,26 @@ const structure = [
     label: "Typography",
     link: "/app/typography",
     icon: <TypographyIcon />,
+  },
+  {
+    id: 3, 
+    label: "Thông tin", 
+    link: "/app/info", 
+    icon: <InfoIcon />,
+    children: [
+      { 
+        id: 1,
+        label: "Gia sư", 
+        link: "/app/tutors",
+        icon: <InfoIcon />
+      },
+      { 
+        id: 2,
+        label: "Phụ huynh", 
+        link: "/app/parents" ,
+        icon: <InfoIcon />
+      }
+    ],
   },
 ];
 
