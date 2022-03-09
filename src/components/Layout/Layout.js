@@ -17,6 +17,12 @@ import Footer from "../Footer/Footer";
 // pages
 import Dashboard from "../../pages/dashboard";
 
+//pages/parent
+import ParentList from "../../pages/parent/List";
+import ParentAdd from "../../pages/parent/Add";
+import ParentEdit from "../../pages/parent/Edit";
+import ParentView from "../../pages/parent/View";
+
 // context
 import { useLayoutState } from "../../context/LayoutContext";
 
@@ -39,6 +45,10 @@ function Layout(props) {
             <div className={classes.fakeToolbar} />
             <Switch>
               <Route path="/app/dashboard" component={Dashboard} />
+              <Route path="/app/parents/add" component={ParentAdd} />
+              <Route path="/app/parents/edit/:id" component={ParentEdit} />
+              <Route path="/app/parents/view/:id" component={ParentView} />
+              <Route path="/app/parents" component={ParentList} />
             </Switch>
             <Footer />
           </div>
