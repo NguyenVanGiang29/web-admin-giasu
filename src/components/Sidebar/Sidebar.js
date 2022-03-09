@@ -8,6 +8,7 @@ import {
 import { useTheme } from "@material-ui/styles";
 import { withRouter } from "react-router-dom";
 import classNames from "classnames";
+import AccountIcon from '@material-ui/icons/AccountCircle';
 
 // styles
 import useStyles from "./styles";
@@ -30,6 +31,7 @@ const structure = [
     link: "/app/typography",
     icon: <TypographyIcon />,
   },
+  { id: 2, label: "Tài khoản", link: "/app/accounts", icon: <AccountIcon /> },
 ];
 
 function Sidebar({ location }) {
