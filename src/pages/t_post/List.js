@@ -120,7 +120,7 @@ const List = () => {
         sort: false,
       },
     },
-  ], []);
+  ], [tpost]);
 
   useEffect(() => {
     axios({

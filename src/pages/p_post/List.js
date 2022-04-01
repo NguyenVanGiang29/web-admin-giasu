@@ -15,7 +15,7 @@ import axios from "axios";
 
 const List = () => {
   const history = useHistory();
-  const [tpost, setTpost] = useState();
+  const [ppost, setPpost] = useState();
   const classes = useStyles();
 
   const columns = useMemo(() => [
@@ -120,14 +120,14 @@ const List = () => {
         sort: false,
       },
     },
-  ], []);
+  ], [ppost]);
 
   useEffect(() => {
     axios({
       method: "get",
       url: "http://127.0.0.1:8000/api/p_posts",
     }).then(function (response) {
-      setTpost(response.data);
+      setPpost(response.data);
     });
   }, []);
 
@@ -152,7 +152,7 @@ const List = () => {
           </Button>
           <MUIDataTable
             title="Bài đăng của Gia sư"
-            data={tpost}
+            data={ppost}
             columns={columns}
             options={{
               filterType: "checkbox",
