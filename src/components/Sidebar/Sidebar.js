@@ -8,6 +8,7 @@ import {
 import { useTheme } from "@material-ui/styles";
 import { withRouter } from "react-router-dom";
 import classNames from "classnames";
+import PostIcon from '@material-ui/icons/PostAdd';
 
 // styles
 import useStyles from "./styles";
@@ -29,6 +30,26 @@ const structure = [
     label: "Typography",
     link: "/app/typography",
     icon: <TypographyIcon />,
+  },
+  {
+    id: 4, 
+    label: "Bài đăng", 
+    link: "/app/post", 
+    icon: <PostIcon />,
+    children: [
+      { 
+        id: 1,
+        label: "Gia sư", 
+        link: "/app/t_posts",
+        icon: <PostIcon />
+      },
+      { 
+        id: 2,
+        label: "Phụ huynh", 
+        link: "/app/p_posts" ,
+        icon: <PostIcon />
+      }
+    ],
   },
 ];
 
