@@ -17,7 +17,7 @@ import axios from "axios";
 
 export default function List() {
   const history = useHistory();
-  const [tutor, setTutor] = useState();
+  const [parent, setParent] = useState();
   const classes = useStyles();
 
   const columns = useMemo(() => [
@@ -114,14 +114,14 @@ export default function List() {
         sort: false,
       },
     },
-  ], []);
+  ], [parent]);
 
   useEffect(() => {
     axios({
       method: "get",
       url: "http://127.0.0.1:8000/api/parents",
     }).then(function (response) {
-      setTutor(response.data);
+      setParent(response.data);
     });
   }, []);
 
@@ -156,7 +156,7 @@ export default function List() {
           </Button>
           <MUIDataTable
             title="Thông tin phụ huynh"
-            data={tutor}
+            data={parent}
             columns={columns}
             options={{
               filterType: "checkbox",
