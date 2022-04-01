@@ -122,7 +122,7 @@ export default function List() {
         sort: false,
       },
     },
-  ], []);
+  ], [tutor]);
 
   useEffect(() => {
     axios({
