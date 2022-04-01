@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import PageTitle from '../../components/PageTitle/PageTitle';
-import { Grid, Typography, Breadcrumbs, Link } from '@material-ui/core';
+import { Grid, Box, Typography, Breadcrumbs, Link } from '@material-ui/core';
 import NameIcon from '@material-ui/icons/AccountCircle';
 import EmailIcon from '@material-ui/icons/Email';
 import PasswordIcon from '@material-ui/icons/Lock';
@@ -46,40 +46,40 @@ const View = () => {
             </Breadcrumbs>
             {
                 account &&
-                <div>
+                <Box>
                     <PageTitle title="Thông tin tài khoản" />
                     <Grid container spacing={4}>
                         <Grid item xs={4}>
                             <Typography variant="h6" component="h2" >
                                 Tên người dùng
                             </Typography>
-                            <div className={classes.inputSymbol}>
+                            <Box className={classes.inputSymbol}>
                                 <NameIcon className={classes.symbol} />
                                 <Typography className={classes.info}>
                                     {account[0].name}
                                 </Typography>
-                            </div>
+                            </Box>
                             <Typography className={classes.nameItem} variant="h6" component="h2" >
                                 Email
                             </Typography>
-                            <div className={classes.inputSymbol}>
+                            <Box className={classes.inputSymbol}>
                                 <EmailIcon className={classes.symbol} />
                                 <Typography className={classes.info}>
                                     {account[0].email}
                                 </Typography>
-                            </div>
+                            </Box>
                             <Typography className={classes.nameItem} variant="h6" component="h2" >
                                 Mật khẩu
                             </Typography>
-                            <div className={classes.inputSymbol}>
+                            <Box className={classes.inputSymbol}>
                                 <PasswordIcon className={classes.symbol} />
                                 <Typography className={classes.info}>
                                     {account[0].password}
                                 </Typography>
-                            </div>
+                            </Box>
                         </Grid>
                     </Grid>
-                </div>
+                </Box>
             }
         </>
     )

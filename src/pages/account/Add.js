@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useFormik } from 'formik';
-import { Grid, Typography, Button, Input, Snackbar, Breadcrumbs, Link } from '@material-ui/core';
+import { Grid, Box, Typography, Button, Input, Snackbar, Breadcrumbs, Link } from '@material-ui/core';
 import * as Yup from 'yup';
 import PageTitle from "../../components/PageTitle/PageTitle";
 import useStyles from './styles';
@@ -56,7 +56,6 @@ const Add = () => {
                 url: 'http://127.0.0.1:8000/api/users',
                 data: values,
             }).then(function (response) {
-                console.log(response);
                 setMessage(response.data.message);
                 setOpen(true);
                 history.goBack();
@@ -96,7 +95,7 @@ const Add = () => {
                         <Typography variant="h6" component="h2" >
                             Tên người dùng
                         </Typography>
-                        <div className={classes.inputSymbol}>
+                        <Box className={classes.inputSymbol}>
                             <NameIcon className={classes.symbol} size="large" />
                             <Input
                                 error={formik.touched.name && formik.errors?.name}
@@ -106,14 +105,14 @@ const Add = () => {
                                 onChange={formik.handleChange}
                                 value={formik.values.name}
                             />
-                        </div>
+                        </Box>
                         {formik.errors.name && formik.touched.name ? (
                             <Typography variant='caption' color='error'>{formik.errors.name}</Typography>
                         ) : null}
                         <Typography variant="h6" component="h2" className={classes.itemName}>
                             Email
                         </Typography>
-                        <div className={classes.inputSymbol}>
+                        <Box className={classes.inputSymbol}>
                             <EmailIcon className={classes.symbol} />
                             <Input
                                 error={formik.touched.email && formik.errors?.email}
@@ -123,14 +122,14 @@ const Add = () => {
                                 onChange={formik.handleChange}
                                 value={formik.values.email}
                             />
-                        </div>
+                        </Box>
                         {formik.errors.email && formik.touched.email ? (
                             <Typography variant='caption' color='error'>{formik.errors.email}</Typography>
                         ) : null}
                         <Typography variant="h6" component="h2" className={classes.itemName}>
                             Mật khẩu
                         </Typography>
-                        <div className={classes.inputSymbol}>
+                        <Box className={classes.inputSymbol}>
                             <PasswordIcon className={classes.symbol} />
                             <Input
                                 error={formik.touched.password && formik.errors?.password}
@@ -140,7 +139,7 @@ const Add = () => {
                                 onChange={formik.handleChange}
                                 value={formik.values.password}
                             />
-                        </div>
+                        </Box>
                         {formik.errors.password && formik.touched.password ? (
                             <Typography variant='caption' color='error'>{formik.errors.password}</Typography>
                         ) : null}

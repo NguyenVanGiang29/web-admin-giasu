@@ -103,10 +103,6 @@ export default function List() {
     history.push(path);
   }
 
-  const handleDelete = (data) => {
-    console.log(data);
-  }
-
   return (
     <>
       <Breadcrumbs>
@@ -137,7 +133,6 @@ export default function List() {
             columns={columns}
             options={{
               filterType: "checkbox",
-              onRowsDelete: handleDelete,
             }}
           />
         </Grid>
