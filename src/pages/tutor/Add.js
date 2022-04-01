@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useFormik } from 'formik';
-import { Grid, Typography, Button, TextField, Input, Link, Breadcrumbs } from '@material-ui/core';
+import { Grid, Box, Typography, Button, TextField, Input, Link, Breadcrumbs } from '@material-ui/core';
 import * as Yup from 'yup';
 import PageTitle from "../../components/PageTitle/PageTitle";
 import Select from '@material-ui/core/NativeSelect';
@@ -126,7 +126,7 @@ const Add = () => {
                         <Typography variant="h6" component="h2" >
                             Email khoản đăng ký
                         </Typography>
-                        <div className={classes.inputSymbol}>
+                        <Box className={classes.inputSymbol}>
                             <EmailIcon className={classes.symbol} />
                             <Select
                                 id="user_id"
@@ -138,11 +138,11 @@ const Add = () => {
                                     <option key={account.id} value={account.id}>{account.email}</option>
                                 ))}
                             </Select>
-                        </div>
+                        </Box>
                         <Typography className={classes.nameItem} variant="h6" component="h2">
                             Tên người dùng
                         </Typography>
-                        <div className={classes.inputSymbol}>
+                        <Box className={classes.inputSymbol}>
                             <NameIcon className={classes.symbol} />
                             <Input
                                 id="name"
@@ -152,14 +152,14 @@ const Add = () => {
                                 error={formik.touched.name && formik.errors?.name}
                                 fullWidth
                             />
-                        </div>
+                        </Box>
                         {formik.errors.name && formik.touched.name ? (
                             <Typography variant='caption' color='error'>{formik.errors.name}</Typography>
                         ) : null}
                         <Typography className={classes.nameItem} variant="h6" component="h2">
                             Ngày sinh
                         </Typography>
-                        <div className={classes.inputSymbol}>
+                        <Box className={classes.inputSymbol}>
                             <DateIcon className={classes.symbol} />
                             <TextField
                                 id="birthday"
@@ -170,7 +170,7 @@ const Add = () => {
                                 error={formik.touched.birthday && formik.errors?.birthday}
                                 fullWidth
                             />
-                        </div>
+                        </Box>
                         {formik.errors.birthday && formik.touched.birthday ? (
                             <Typography variant='caption' color='error'>{formik.errors.birthday}</Typography>
                         ) : null}
@@ -195,9 +195,9 @@ const Add = () => {
                         <Typography className={classes.nameItem} variant="h6" component="h2">
                             Ảnh đại diện
                         </Typography>
-                        <div className={classes.inputSymbol}>
+                        <Box className={classes.inputSymbol}>
                             <ImageIcon className={classes.symbol} />
-                            <div className={classes.uploadDiv}>
+                            <Box className={classes.uploadBox}>
                                 <input
                                     className={classes.inputImage}
                                     id="avatar"
@@ -205,9 +205,7 @@ const Add = () => {
                                     type="file"
                                     value={formik.values.avatar}
                                     onChange={(e) => {
-                                        console.log(e);
                                         setImage(e.target.files[0]);
-                                        console.log(image);
                                         formik.handleChange(e);
                                     }}
                                     error={formik.touched.avatar && formik.errors?.avatar}
@@ -218,14 +216,14 @@ const Add = () => {
                                         :
                                         <img className={classes.avatar} alt="" src={'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'} />
                                 }
-                            </div>
-                        </div>
+                            </Box>
+                        </Box>
                     </Grid>
                     <Grid item xs={6}>
                         <Typography variant="h6" component="h2">
                             Công việc
                         </Typography>
-                        <div className={classes.inputSymbol}>
+                        <Box className={classes.inputSymbol}>
                             <JobIcon className={classes.symbol} />
                             <Select
                                 id="job"
@@ -240,14 +238,14 @@ const Add = () => {
                                     <option key={job.key} value={job.value}>{job.lable}</option>
                                 ))}
                             </Select>
-                        </div>
+                        </Box>
                         {formik.errors.job && formik.touched.job ? (
                             <Typography variant='caption' color='error'>{formik.errors.job}</Typography>
                         ) : null}
                         <Typography className={classes.nameItem} variant="h6" component="h2">
                             Số điện thoại
                         </Typography>
-                        <div className={classes.inputSymbol}>
+                        <Box className={classes.inputSymbol}>
                             <PhoneIcon className={classes.symbol} />
                             <Input
                                 id="phone"
@@ -258,14 +256,14 @@ const Add = () => {
                                 error={formik.touched.phone && formik.errors?.phone}
                                 fullWidth
                             />
-                        </div>
+                        </Box>
                         {formik.errors.phone && formik.touched.phone ? (
                             <Typography variant='caption' color='error'>{formik.errors.phone}</Typography>
                         ) : null}
                         <Typography className={classes.nameItem} variant="h6" component="h2">
                             Địa chỉ
                         </Typography>
-                        <div className={classes.inputSymbol}>
+                        <Box className={classes.inputSymbol}>
                             <LocationIcon className={classes.symbol} />
                             <Input
                                 id="address"
@@ -276,7 +274,7 @@ const Add = () => {
                                 error={formik.touched.address && formik.errors?.address}
                                 fullWidth
                             />
-                        </div>
+                        </Box>
                         {formik.errors.address && formik.touched.address ? (
                             <Typography variant='caption' color='error'>{formik.errors.address}</Typography>
                         ) : null}

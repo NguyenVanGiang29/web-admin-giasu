@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Grid, Typography } from '@material-ui/core';
+import { Grid, Box, Typography } from '@material-ui/core';
 import PageTitle from "../../components/PageTitle/PageTitle";
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -33,81 +33,81 @@ const View = () => {
         <>
             {
                 tutor &&
-                <div>
+                <Box>
                     <PageTitle title="Thông tin gia sư chi tiết" />
                     <Grid container spacing={1} style={{ marginLeft: '30px' }}>
                         <Grid item xs={6}>
                             <Typography variant="h6" component="h2" >
                                 Tên người dùng
                             </Typography>
-                            <div className={classes.inputSymbol}>
+                            <Box className={classes.inputSymbol}>
                                 <NameIcon className={classes.symbol} />
                                 <Typography className={classes.info}>
                                     {tutor.name}
                                 </Typography>
-                            </div>
+                            </Box>
                             <Typography className={classes.nameItem} variant="h6" component="h2" >
                                 Email
                             </Typography>
-                            <div className={classes.inputSymbol}>
+                            <Box className={classes.inputSymbol}>
                                 <EmailIcon className={classes.symbol} />
                                 <Typography className={classes.info}>
                                     {tutor.email}
                                 </Typography>
-                            </div>
+                            </Box>
                             <Typography className={classes.nameItem} variant="h6" component="h2" >
                                 Ngày Sinh
                             </Typography>
-                            <div className={classes.inputSymbol}>
+                            <Box className={classes.inputSymbol}>
                                 <DateIcon className={classes.symbol} />
                                 <Typography className={classes.info}>
                                     {tutor.birthday}
                                 </Typography>
-                            </div>
+                            </Box>
                             <Typography className={classes.nameItem} variant="h6" component="h2" >
                                 Giới Tính
                             </Typography>
-                            <div className={classes.inputSymbol}>
+                            <Box className={classes.inputSymbol}>
                                 <SexIcon className={classes.symbol} />
                                 <Typography className={classes.info}>
                                     {tutor.sex}
                                 </Typography>
-                            </div>
+                            </Box>
                         </Grid>
                         <Grid item xs={6} >
                             <Typography variant="h6" component="h2" >
                                 Công Việc
                             </Typography>
-                            <div className={classes.inputSymbol}>
+                            <Box className={classes.inputSymbol}>
                                 <JobIcon className={classes.symbol} />
                                 <Typography className={classes.info}>
                                     {tutor.job}
                                 </Typography>
-                            </div>
+                            </Box>
                             <Typography className={classes.nameItem} variant="h6" component="h2" >
                                 Số Điện Thoại
                             </Typography>
-                            <div className={classes.inputSymbol}>
+                            <Box className={classes.inputSymbol}>
                                 <PhoneIcon className={classes.symbol} />
                                 <Typography className={classes.info}>
                                     {tutor.phone}
                                 </Typography>
-                            </div>
+                            </Box>
                             <Typography className={classes.nameItem} variant="h6" component="h2" >
                                 Địa Chỉ
                             </Typography>
-                            <div className={classes.inputSymbol}>
+                            <Box className={classes.inputSymbol}>
                                 <LocationIcon className={classes.symbol} />
                                 <Typography className={classes.info}>
                                     {tutor.address}
                                 </Typography>
-                            </div>
+                            </Box>
                             <Typography className={classes.nameItem} variant="h6" component="h2" >
                                 Ảnh Đại Diện
                             </Typography>
-                            <div className={classes.inputSymbol}>
+                            <Box className={classes.inputSymbol}>
                             <ImageIcon className={classes.symbol} />
-                            <div className={classes.uploadDiv}>
+                            <Box className={classes.uploadBox}>
                                 <input
                                     className={classes.inputImage}
                                     id="avatar"
@@ -120,11 +120,11 @@ const View = () => {
                                         :
                                         <img className={classes.avatar} alt="" src={'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'} />
                                 }
-                            </div>
-                        </div>
+                            </Box>
+                        </Box>
                         </Grid>
                     </Grid>
-                </div>
+                </Box>
             }
         </>
     );
