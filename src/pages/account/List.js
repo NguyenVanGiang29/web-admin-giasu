@@ -90,7 +90,7 @@ export default function List() {
         sort: false,
       },
     },
-  ], []);
+  ], [account]);
 
   useEffect(() => {
     axios({
