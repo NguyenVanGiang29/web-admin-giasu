@@ -88,7 +88,7 @@ const notifications = [
   },
 ];
 
-export default function Header(props) {
+const Header = (props) => {
   var classes = useStyles();
 
   // global
@@ -336,3 +336,5 @@ export default function Header(props) {
     </AppBar>
   );
 }
+
+export default React.memo(Header)
