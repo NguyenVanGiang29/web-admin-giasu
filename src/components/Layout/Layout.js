@@ -23,6 +23,12 @@ import ParentAdd from "../../pages/parent/Add";
 import ParentEdit from "../../pages/parent/Edit";
 import ParentView from "../../pages/parent/View";
 
+//account
+import AccountList from "../../pages/account/List";
+import AccountAdd from "../../pages/account/Add";
+import AccountEdit from "../../pages/account/Edit";
+import AccountView from "../../pages/account/View";
+
 // context
 import { useLayoutState } from "../../context/LayoutContext";
 
@@ -49,6 +55,10 @@ function Layout(props) {
               <Route path="/app/parents/edit/:id" component={ParentEdit} />
               <Route path="/app/parents/view/:id" component={ParentView} />
               <Route path="/app/parents" component={ParentList} />
+              <Route path="/app/accounts/add" component={AccountAdd} />
+              <Route path="/app/accounts/edit/:id" component={AccountEdit} />
+              <Route path="/app/accounts/view/:id" component={AccountView} />
+              <Route path="/app/accounts" component={AccountList} />
             </Switch>
             <Footer />
           </div>
