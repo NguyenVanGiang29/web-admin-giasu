@@ -10,12 +10,12 @@ import classnames from "classnames";
 import useStyles from "./styles";
 
 // components
-import Header from "../Header";
-import Sidebar from "../Sidebar";
+import Header from "../Header/Header";
+import Sidebar from "../Sidebar/Sidebar";
 import Footer from "../Footer/Footer";
 
 // pages
-import Dashboard from "../../pages/dashboard";
+import Dashboard from "../../pages/dashboard/Dashboard";
 
 //pages/parent
 import ParentList from "../../pages/parent/List";
