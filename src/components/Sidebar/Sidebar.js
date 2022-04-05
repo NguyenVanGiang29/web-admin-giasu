@@ -10,6 +10,7 @@ import { withRouter } from "react-router-dom";
 import classNames from "classnames";
 import InfoIcon from '@material-ui/icons/Info';
 import AccountIcon from '@material-ui/icons/AccountCircle';
+import PostIcon from '@material-ui/icons/PostAdd';
 
 // styles
 import useStyles from "./styles";
@@ -32,6 +33,7 @@ const structure = [
     link: "/app/typography",
     icon: <TypographyIcon />,
   },
+  { id: 2, label: "Tài khoản", link: "/app/accounts", icon: <AccountIcon /> },
   {
     id: 3, 
     label: "Thông tin", 
@@ -52,7 +54,26 @@ const structure = [
       }
     ],
   },
-  { id: 2, label: "Tài khoản", link: "/app/accounts", icon: <AccountIcon /> },
+  {
+    id: 4, 
+    label: "Bài đăng", 
+    link: "/app/post", 
+    icon: <PostIcon />,
+    children: [
+      { 
+        id: 1,
+        label: "Gia sư", 
+        link: "/app/t_posts",
+        icon: <PostIcon />
+      },
+      { 
+        id: 2,
+        label: "Phụ huynh", 
+        link: "/app/p_posts" ,
+        icon: <PostIcon />
+      }
+    ],
+  },
 ];
 
 function Sidebar({ location }) {

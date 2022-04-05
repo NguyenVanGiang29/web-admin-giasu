@@ -50,7 +50,7 @@ function Login(props) {
             <Tab label="New User" classes={{ root: classes.tab }} />
           </Tabs>
           {activeTabId === 0 && (
-            <React.Fragment>
+            <>
               <Typography variant="h1" className={classes.greeting}>
                 Hello User
               </Typography>
@@ -131,10 +131,10 @@ function Login(props) {
                   Forget Password
                 </Button>
               </div>
-            </React.Fragment>
+            </>
           )}
           {activeTabId === 1 && (
-            <React.Fragment>
+            <>
               <Typography variant="h1" className={classes.greeting}>
                 Welcome!
               </Typography>
@@ -236,7 +236,7 @@ function Login(props) {
                 <img src={google} alt="google" className={classes.googleIcon} />
                 &nbsp;Sign in with Google
               </Button>
-            </React.Fragment>
+            </>
           )}
         </div>
       </div>
