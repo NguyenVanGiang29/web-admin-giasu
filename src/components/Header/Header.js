@@ -23,7 +23,7 @@ import classNames from "classnames";
 import useStyles from "./styles";
 
 // components
-import { Badge, Typography } from "../Wrappers";
+import { Badge, Typography } from "../Wrappers/Wrappers";
 import Notification from "../Notification/Notification";
 import UserAvatar from "../UserAvatar/UserAvatar";
 
@@ -88,7 +88,7 @@ const notifications = [
   },
 ];
 
-export default function Header(props) {
+const Header = (props) => {
   var classes = useStyles();
 
   // global
@@ -336,3 +336,5 @@ export default function Header(props) {
     </AppBar>
   );
 }
+
+export default React.memo(Header)
